@@ -14,17 +14,23 @@ class TaskTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      onLongPress: longPressCallback,
-      title: Text(
-        taskTitle,
-        style: TextStyle(
-            decoration: isChecked ? TextDecoration.lineThrough : null),
-      ),
-      trailing: Checkbox(
-        activeColor: Colors.lightBlueAccent,
-        value: isChecked,
-        onChanged: checkboxCallback,
+    return Center(
+      child: ListTile(
+        onLongPress: longPressCallback,
+        title: Text(
+          taskTitle,
+          style: TextStyle(
+              color: Colors.white,
+              decoration: isChecked ? TextDecoration.lineThrough : null),
+        ),
+        leading: Theme(
+          data: ThemeData(unselectedWidgetColor: Colors.white),
+          child: Checkbox(
+            activeColor: Color(0xff009688),
+            value: isChecked,
+            onChanged: checkboxCallback,
+          ),
+        ),
       ),
     );
   }

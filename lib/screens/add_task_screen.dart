@@ -10,10 +10,10 @@ class AddTaskScreen extends StatelessWidget {
 
     return Container(
       padding: EdgeInsets.all(20.0),
-      color: Color(0xff757575),
+      color: Color(0xff00796B),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Color(0xff009688),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20.0),
             topRight: Radius.circular(20.0),
@@ -22,33 +22,38 @@ class AddTaskScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              'Add Task',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 30.0,
-                color: Colors.lightBlueAccent,
+            Center(
+              child: Text(
+                'Task',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                ),
               ),
             ),
             TextField(
               autofocus: true,
-              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white),
+              textAlign: TextAlign.left,
               onChanged: (newText) {
                 newTaskTitle = newText;
               },
             ),
-            FlatButton(
-              child: Text(
-                'Add',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
+            TextButton.icon(
+              icon: Icon(Icons.add),
+              label: Text('Add'),
+              style: TextButton.styleFrom(
+                primary: Colors.white,
+                backgroundColor: Color(0xff607D8B),
+                // minimumSize: Size(100, 50),
               ),
-              color: Colors.lightBlueAccent,
               onPressed: () {
-                Provider.of<TaskData>(context, listen: false)
-                    .addTask(newTaskTitle);
-                Navigator.pop(context);
+                if (newTaskTitle.isNotEmpty) {
+                  Provider.of<TaskData>(context, listen: false)
+                      .addTask(newTaskTitle);
+                  Navigator.pop(context);
+                }
               },
             ),
           ],

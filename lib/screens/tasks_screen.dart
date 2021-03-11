@@ -8,9 +8,10 @@ class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: Color(0xff009688),
       floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.lightBlueAccent,
+          backgroundColor: Colors.lightGreen[50],
+          foregroundColor: Colors.green[900],
           child: Icon(Icons.add),
           onPressed: () {
             showModalBottomSheet(
@@ -18,7 +19,7 @@ class TasksScreen extends StatelessWidget {
               isScrollControlled: true,
               builder: (BuildContext context) => SingleChildScrollView(
                 child: Container(
-                  padding: EdgeInsets.only(bottom: 240),
+                  //padding: EdgeInsets.only(bottom: 100),
                   child: AddTaskScreen(),
                 ),
               ),
@@ -35,8 +36,8 @@ class TasksScreen extends StatelessWidget {
               children: <Widget>[
                 CircleAvatar(
                   child: Icon(Icons.list,
-                      size: 30.0, color: Colors.lightBlueAccent),
-                  backgroundColor: Colors.white,
+                      size: 30.0, color: Colors.lightGreen[900]),
+                  backgroundColor: Colors.lightGreen[50],
                   radius: 30.0,
                 ),
                 SizedBox(height: 10.0),
@@ -44,7 +45,7 @@ class TasksScreen extends StatelessWidget {
                   'ToDo',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 50.0,
+                      fontSize: 45.0,
                       fontWeight: FontWeight.w700),
                 ),
                 Text(
@@ -61,7 +62,7 @@ class TasksScreen extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 10.0),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Color(0xff00796B),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20.0),
                   topRight: Radius.circular(20.0),
