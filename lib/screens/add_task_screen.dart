@@ -24,7 +24,7 @@ class AddTaskScreen extends StatelessWidget {
           children: [
             Center(
               child: Text(
-                'Task',
+                '',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 20.0,
@@ -33,7 +33,9 @@ class AddTaskScreen extends StatelessWidget {
               ),
             ),
             TextField(
+              decoration: new InputDecoration.collapsed(hintText: 'Enter Task'),
               autofocus: true,
+              cursorColor: Colors.white,
               style: TextStyle(color: Colors.white),
               textAlign: TextAlign.left,
               onChanged: (newText) {
